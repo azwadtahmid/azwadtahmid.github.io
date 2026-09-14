@@ -1,0 +1,1114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Azwad Tahmid - Computer Science student at Brunel University London building local-first GenAI systems. Winner, Hillingdon Hackathon 2026. Seeking a 12-month software engineering placement from Summer 2027.">
+<meta name="author" content="Azwad Tahmid">
+<meta name="theme-color" content="#EBEAE4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Azwad Tahmid">
+<meta property="og:description" content="Azwad Tahmid - Computer Science student at Brunel University London building local-first GenAI systems. Winner, Hillingdon Hackathon 2026. Seeking a 12-month software engineering placement from Summer 2027.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azwad Tahmid">
+<meta name="twitter:description" content="Azwad Tahmid - Computer Science student at Brunel University London building local-first GenAI systems. Winner, Hillingdon Hackathon 2026. Seeking a 12-month software engineering placement from Summer 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2788%27%3E%F0%9F%97%84%3C%2Ftext%3E%3C%2Fsvg%3E">
+<style>
+  :root{color-scheme:light dark}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Azwad Tahmid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --paper:#EBEAE4; --paper-2:#E3E1D9; --surface:#F6F5F1;
+  --ink:#171614; --ink-soft:#5A564B; --ink-faint:#8C877A;
+  --rule:#CBC8BD; --rule-soft:#DCD9D0;
+  --stamp:#8C2F24; --verify:#3A6455; --live:#B4762A;
+  --redact:#171614; --redact-ring:#171614;
+  --grid-line:rgba(23,22,20,.055);
+
+  --f-d:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-b:"Newsreader",Georgia,serif;
+  --f-m:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  --s--1:.8125rem; --s-0:1.0625rem; --s-1:1.1875rem; --s-2:1.375rem;
+  --s-3:clamp(1.5rem,2.6vw,2rem);
+  --s-4:clamp(2.1rem,5vw,3.4rem);
+  --s-5:clamp(3rem,11vw,7.5rem);
+
+  --gut:clamp(1.15rem,4vw,3.25rem);
+  --shell:1220px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --hdr:52px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#131210; --paper-2:#0D0C0B; --surface:#1C1A17;
+    --ink:#EDEBE3; --ink-soft:#A19B8D; --ink-faint:#7A7468;
+    --rule:#34312A; --rule-soft:#26241F;
+    --stamp:#CE5A44; --verify:#74AC92; --live:#D9A05B;
+    --redact:#000000; --redact-ring:#3E3A32;
+    --grid-line:rgba(237,235,227,.05);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131210; --paper-2:#0D0C0B; --surface:#1C1A17;
+  --ink:#EDEBE3; --ink-soft:#A19B8D; --ink-faint:#7A7468;
+  --rule:#34312A; --rule-soft:#26241F;
+  --stamp:#CE5A44; --verify:#74AC92; --live:#D9A05B;
+  --redact:#000000; --redact-ring:#3E3A32;
+  --grid-line:rgba(237,235,227,.05);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--f-b); font-size:var(--s-0); line-height:1.62;
+  font-optical-sizing:auto; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* measurement field — the lab bench */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    repeating-linear-gradient(to right,var(--grid-line) 0 1px,transparent 1px 88px),
+    repeating-linear-gradient(to bottom,var(--grid-line) 0 1px,transparent 1px 88px);
+  mask-image:radial-gradient(ellipse 120% 80% at 50% 0%,#000 35%,transparent 78%);
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--stamp); outline-offset:3px}
+code{font-family:var(--f-m); font-size:.88em}
+
+.mono{font-family:var(--f-m); font-size:.6875rem; letter-spacing:.13em; text-transform:uppercase}
+
+/* ============ INSTRUMENT HEADER ============ */
+.hdr{
+  position:fixed; top:0; left:0; right:0; z-index:60; height:var(--hdr);
+  display:flex; align-items:center; gap:1.5rem;
+  padding:0 var(--gut);
+  background:color-mix(in srgb,var(--paper) 86%,transparent);
+  backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--rule-soft);
+}
+.hdr-name{
+  font-family:var(--f-d); font-variation-settings:"wdth" 108; font-weight:800;
+  font-size:.8125rem; letter-spacing:.08em; text-transform:uppercase;
+  opacity:0; transform:translateY(6px); transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+.hdr.is-past .hdr-name{opacity:1; transform:none}
+.hdr-read{
+  margin-left:auto; display:flex; align-items:center; gap:.7rem;
+  color:var(--ink-faint); white-space:nowrap;
+}
+.hdr-read b{color:var(--stamp); font-weight:600}
+.dot{
+  width:5px; height:5px; border-radius:50%; background:var(--verify);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--verify) 60%,transparent);
+  animation:pulse 2.6s var(--ease) infinite;
+}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--verify) 55%,transparent)}
+70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hdr-prog{position:absolute; left:0; bottom:-1px; height:1px; background:var(--stamp); width:0}
+
+/* ============ SPINE ============ */
+.spine{
+  position:fixed; left:max(14px,calc((100vw - var(--shell))/2 - 62px)); top:50%;
+  transform:translateY(-50%); z-index:50;
+  display:none; flex-direction:column; gap:0;
+}
+@media (min-width:1180px){.spine{display:flex}}
+.sp-node{display:grid; grid-template-columns:9px 1fr; gap:.7rem; align-items:start}
+.sp-mark{position:relative; display:flex; justify-content:center; padding-top:5px}
+.sp-mark i{
+  width:7px; height:7px; border:1px solid var(--ink-faint); background:var(--paper);
+  transform:rotate(45deg); transition:all .5s var(--ease);
+}
+.sp-line{width:1px; height:54px; background:var(--rule); position:relative; overflow:hidden}
+.sp-line::after{
+  content:""; position:absolute; inset:0; background:var(--stamp);
+  transform:scaleY(0); transform-origin:top; transition:transform .7s var(--ease);
+}
+.sp-node.done .sp-line::after{transform:scaleY(1)}
+.sp-label{
+  font-family:var(--f-m); font-size:.625rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-faint); transition:color .4s var(--ease),letter-spacing .5s var(--ease);
+  padding-top:1px;
+}
+.sp-node.on .sp-mark i{background:var(--stamp); border-color:var(--stamp); transform:rotate(45deg) scale(1.45)}
+.sp-node.on .sp-label{color:var(--ink); letter-spacing:.22em}
+.sp-node.done .sp-mark i{border-color:var(--stamp); background:var(--stamp)}
+
+/* ============ SHELL ============ */
+.shell{max-width:var(--shell); margin-inline:auto; padding-inline:var(--gut); position:relative; z-index:1}
+
+/* ============ HERO ============ */
+.hero-track{height:210vh; position:relative}
+.hero-stage{
+  position:sticky; top:0; height:100vh; height:100svh; min-height:560px;
+  display:flex; flex-direction:column; justify-content:center;
+  transform-origin:left center;
+}
+.hero-in{max-width:var(--shell); margin-inline:auto; padding-inline:var(--gut); width:100%}
+.hero-meta{display:flex; flex-wrap:wrap; gap:.4rem 1.6rem; color:var(--ink-faint); margin-bottom:1.9rem}
+.hero-meta b{color:var(--verify); font-weight:500}
+
+h1{
+  font-family:var(--f-d); font-variation-settings:"wdth" 118; font-weight:800;
+  font-size:var(--s-5); line-height:.84; letter-spacing:-.035em; text-transform:uppercase;
+  margin:0; display:flex; flex-direction:column;
+}
+.ln{position:relative; display:block; width:max-content; max-width:100%}
+.ln.indent{margin-left:clamp(0px,7vw,7rem)}
+.bar{
+  position:absolute; inset:-.02em -.06em; background:var(--redact); transform-origin:left;
+  z-index:2; pointer-events:none;
+}
+.hero-thesis{
+  font-family:var(--f-b); font-style:italic; font-size:var(--s-3); line-height:1.24;
+  max-width:24ch; margin:2.2rem 0 0; color:var(--ink-soft); text-wrap:balance;
+}
+.hero-foot{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem 2.2rem;
+  margin-top:2.6rem; padding-top:1rem; border-top:1px solid var(--rule);
+  color:var(--ink-faint);
+}
+.hero-foot b{
+  font-family:var(--f-d); font-variation-settings:"wdth" 100; font-weight:700;
+  font-size:1.15rem; color:var(--ink); letter-spacing:-.01em; margin-right:.45rem;
+  font-variant-numeric:tabular-nums;
+}
+.scroll-cue{position:absolute; bottom:2.2rem; left:var(--gut); color:var(--ink-faint); display:flex; gap:.6rem; align-items:center}
+.scroll-cue i{display:block; width:26px; height:1px; background:var(--ink-faint); transform-origin:left; animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%,100%{transform:scaleX(.3); opacity:.4}50%{transform:scaleX(1); opacity:1}}
+
+/* ============ SECTIONS ============ */
+.band{position:relative; padding:clamp(4.5rem,11vw,9rem) 0}
+.band + .band{border-top:1px solid var(--rule)}
+.band-head{display:grid; grid-template-columns:minmax(0,1fr); gap:.9rem; margin-bottom:clamp(2.5rem,5vw,4rem)}
+@media (min-width:900px){.band-head{grid-template-columns:200px minmax(0,1fr); gap:0 2.5rem}}
+.band-tag{color:var(--stamp); font-weight:600; padding-top:.55rem}
+.band-tag span{display:block; color:var(--ink-faint); font-weight:400; margin-top:.3rem}
+h2{
+  font-family:var(--f-d); font-variation-settings:"wdth" 110; font-weight:800;
+  font-size:var(--s-4); line-height:.96; letter-spacing:-.028em; text-transform:uppercase;
+  margin:0; text-wrap:balance;
+}
+.band-sub{margin:1.1rem 0 0; color:var(--ink-soft); max-width:56ch}
+
+/* ---- INPUT band ---- */
+.brief{display:grid; gap:2.5rem}
+@media (min-width:900px){.brief{grid-template-columns:200px minmax(0,1fr); gap:0 2.5rem}}
+.brief-body{max-width:62ch}
+.brief-body p{margin:0 0 1.15rem}
+.brief-body p:last-child{margin-bottom:0}
+.brief-body strong{font-weight:600; color:var(--ink)}
+.pull{
+  font-family:var(--f-d); font-variation-settings:"wdth" 92; font-weight:700;
+  font-size:clamp(1.6rem,3.6vw,2.6rem); line-height:1.02; letter-spacing:-.022em;
+  text-transform:uppercase; margin:2.5rem 0; padding-left:1.4rem;
+  border-left:3px solid var(--stamp); text-wrap:balance;
+}
+.redact{
+  background:var(--redact); box-shadow:0 0 0 1px var(--redact-ring); color:transparent;
+  padding:0 .22em; border-radius:1px; cursor:pointer;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  transition:background .34s var(--ease),color .34s var(--ease),box-shadow .34s var(--ease);
+}
+.redact:hover,.redact:focus-visible,.redact.is-open{
+  background:transparent; box-shadow:none; color:var(--stamp); font-style:italic;
+}
+
+/* ============ THE LAB (Synthetiq Redact) ============ */
+.lab{display:grid; gap:2rem}
+@media (min-width:1000px){.lab{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:0 3.5rem; align-items:start}}
+
+.lab-sticky{position:sticky; top:calc(var(--hdr) + 18px); z-index:2}
+.machine{
+  border:1px solid var(--rule); background:var(--surface); position:relative;
+  transition:border-color .6s var(--ease),box-shadow .6s var(--ease);
+}
+.machine.alarm{border-color:var(--stamp); box-shadow:0 0 0 3px color-mix(in srgb,var(--stamp) 14%,transparent)}
+.machine-bar{
+  display:flex; align-items:center; gap:.7rem; padding:.55rem .85rem;
+  border-bottom:1px solid var(--rule-soft); color:var(--ink-faint);
+}
+.machine-bar .who{color:var(--verify); font-weight:600}
+.machine-bar .st{margin-left:auto; color:var(--stamp); font-weight:600; font-variant-numeric:tabular-nums}
+
+.doc{
+  position:relative; padding:1.4rem 1.5rem 1.6rem; overflow:hidden;
+  font-family:var(--f-m); font-size:.78rem; line-height:2.15; color:var(--ink-soft);
+  transition:transform .75s var(--ease),filter .75s var(--ease);
+  transform:rotate(-.55deg) scale(1.008);
+}
+.doc::after{ /* scanner sheen */
+  content:""; position:absolute; left:0; right:0; height:34%; top:-40%;
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--live) 15%,transparent),transparent);
+  opacity:0; pointer-events:none;
+}
+.machine[data-stage="1"] .doc::after{animation:scan 2.2s var(--ease) infinite; opacity:1}
+@keyframes scan{0%{top:-40%}100%{top:115%}}
+.machine[data-stage="4"] .doc{transform:rotate(0deg) scale(1)}
+
+.doc .lbl{color:var(--ink-faint)}
+.ent{
+  position:relative; display:inline-block; border-radius:1px; padding:0 .1em;
+  transition:background .5s var(--ease),color .5s var(--ease),box-shadow .5s var(--ease);
+}
+.ent::before{
+  content:attr(data-k); position:absolute; left:calc(100% + 7px); top:50%;
+  font-family:var(--f-m); font-size:.5rem; letter-spacing:.12em; white-space:nowrap;
+  line-height:1; color:var(--stamp); opacity:0;
+  transform:translateY(-50%) translateX(-5px);
+  transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+/* stage 2 — detect */
+.machine[data-stage="2"] .ent,.machine[data-stage="3"] .ent{
+  box-shadow:inset 0 0 0 1px var(--stamp);
+}
+.machine[data-stage="2"] .ent::before{
+  opacity:1; transform:translateY(-50%) translateX(0); transition-delay:calc(var(--i,0) * 70ms);
+}
+/* stage 3+ — burn, cascading down the page */
+.machine[data-stage="3"] .ent,.machine[data-stage="4"] .ent{
+  background:var(--redact); color:transparent; box-shadow:inset 0 0 0 1px var(--redact);
+}
+.machine[data-stage="3"] .ent{transition-delay:calc(var(--i,0) * 85ms)}
+
+.seal{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:.6rem .85rem; border-top:1px solid var(--rule-soft);
+  color:var(--ink-faint); opacity:0; transform:translateY(6px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.machine[data-stage="4"] .seal{opacity:1; transform:none}
+.seal .sig{color:var(--verify); font-weight:600}
+
+.boundary{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.8rem;
+  padding:.7rem .85rem; border-top:1px dashed var(--rule);
+}
+.boundary p{margin:0; color:var(--ink-faint); font-family:var(--f-m); font-size:.625rem;
+  letter-spacing:.1em; text-transform:uppercase}
+.btn{
+  font-family:var(--f-m); font-size:.625rem; letter-spacing:.13em; text-transform:uppercase;
+  background:transparent; color:var(--ink); border:1px solid var(--rule);
+  padding:.42rem .7rem; cursor:pointer; border-radius:2px;
+  transition:border-color .3s var(--ease),color .3s var(--ease),transform .12s var(--ease);
+}
+.btn:hover{border-color:var(--stamp); color:var(--stamp)}
+.btn:active{transform:translateY(1px)}
+.packet{
+  position:absolute; left:50%; top:52%; width:9px; height:9px; background:var(--stamp);
+  opacity:0; pointer-events:none; z-index:5;
+}
+.machine.alarm .packet{animation:esc 1.5s var(--ease) forwards}
+@keyframes esc{
+  0%{opacity:1; transform:translate(0,0) scale(1)}
+  55%{opacity:1; transform:translate(0,-230px) scale(.8)}
+  62%{opacity:1; transform:translate(0,-210px) scale(1.6)}
+  100%{opacity:0; transform:translate(0,-208px) scale(.2)}
+}
+.refused{
+  position:absolute; inset:0; display:grid; place-items:center; z-index:6;
+  opacity:0; pointer-events:none;
+}
+.refused span{
+  font-family:var(--f-d); font-variation-settings:"wdth" 88; font-weight:800;
+  font-size:clamp(1.6rem,4vw,2.6rem); letter-spacing:.02em; text-transform:uppercase;
+  color:var(--stamp); border:3px solid var(--stamp); padding:.2rem .8rem;
+  transform:rotate(-9deg) scale(1.5); opacity:0;
+}
+.machine.alarm .refused{opacity:1}
+.machine.alarm .refused span{animation:stampIn .5s var(--ease) .85s forwards}
+@keyframes stampIn{to{transform:rotate(-9deg) scale(1); opacity:1}}
+
+/* stages column */
+.stages{display:flex; flex-direction:column}
+.stage{
+  padding:clamp(2rem,7vh,4.5rem) 0; border-top:1px solid var(--rule-soft);
+  opacity:.42; transition:opacity .6s var(--ease);
+}
+.stage:first-child{border-top:0}
+.stage.on{opacity:1}
+.stage-n{display:flex; align-items:baseline; gap:.8rem; color:var(--ink-faint); margin-bottom:.65rem}
+.stage-n b{color:var(--stamp); font-weight:600}
+.stage h4{
+  font-family:var(--f-d); font-variation-settings:"wdth" 104; font-weight:700;
+  font-size:var(--s-2); margin:0 0 .5rem; letter-spacing:-.01em;
+}
+.stage p{margin:0; color:var(--ink-soft); max-width:46ch}
+.stage .tech{
+  display:flex; flex-wrap:wrap; gap:.35rem; margin:.9rem 0 0; padding:0; list-style:none;
+}
+.stage .tech li{
+  font-family:var(--f-m); font-size:.625rem; letter-spacing:.05em; color:var(--ink-soft);
+  border:1px solid var(--rule); border-radius:2px; padding:.15rem .4rem;
+}
+
+/* ============ RAG DIAGRAM ============ */
+.rig{border:1px solid var(--rule); background:var(--surface); padding:1.4rem 1.2rem 1.1rem; overflow-x:auto}
+.rig svg{display:block; width:100%; min-width:560px; height:auto}
+.flow-path{stroke:var(--rule); stroke-width:1.5; fill:none; stroke-dasharray:var(--len); stroke-dashoffset:var(--len)}
+.rig.on .flow-path{animation:draw .9s var(--ease) forwards}
+.rig.on .flow-path.d2{animation-delay:.22s} .rig.on .flow-path.d3{animation-delay:.44s}
+.rig.on .flow-path.d4{animation-delay:.66s} .rig.on .flow-path.d5{animation-delay:.88s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.nodebox{fill:var(--paper); stroke:var(--rule); stroke-width:1}
+.nodetxt{font-family:"IBM Plex Mono",monospace; font-size:8.5px; letter-spacing:.1em; fill:var(--ink)}
+.nodesub{font-family:"IBM Plex Mono",monospace; font-size:7px; letter-spacing:.06em; fill:var(--ink-faint)}
+.g-node{opacity:0; transform:translateY(7px)}
+.rig.on .g-node{animation:pop .5s var(--ease) forwards}
+.rig.on .g-node.n2{animation-delay:.2s} .rig.on .g-node.n3{animation-delay:.4s}
+.rig.on .g-node.n4{animation-delay:.6s} .rig.on .g-node.n5{animation-delay:.8s}
+.rig.on .g-node.n6{animation-delay:1s}
+@keyframes pop{to{opacity:1; transform:translateY(0)}}
+.deny{stroke:var(--stamp); stroke-width:1.5; stroke-dasharray:3 3; fill:none}
+.denytxt{font-family:"IBM Plex Mono",monospace; font-size:7px; letter-spacing:.08em; fill:var(--stamp)}
+.pulse-dot{fill:var(--verify); opacity:0}
+.rig.on .pulse-dot{animation:trav 2.6s var(--ease) 1.3s infinite}
+@keyframes trav{0%{opacity:0; transform:translateX(0)}10%{opacity:1}
+90%{opacity:1; transform:translateX(var(--tx))}100%{opacity:0; transform:translateX(var(--tx))}}
+
+/* ============ STATE MACHINE ============ */
+.fsm{display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; margin:1.4rem 0 0; padding:0; list-style:none}
+.fsm li{
+  font-family:var(--f-m); font-size:.625rem; letter-spacing:.09em;
+  border:1px solid var(--rule); padding:.3rem .55rem; border-radius:2px;
+  color:var(--ink-faint); transition:all .45s var(--ease);
+}
+.fsm li.hot{border-color:var(--stamp); color:var(--stamp); background:color-mix(in srgb,var(--stamp) 8%,transparent)}
+.fsm li.bad{border-color:var(--ink-faint); color:var(--ink-faint); opacity:.5}
+.fsm .arw{border:0; color:var(--ink-faint); padding:0}
+
+.lock{display:grid; gap:.5rem; margin:1.3rem 0 0; max-width:340px}
+.lock-row{
+  display:flex; align-items:center; gap:.7rem; padding:.45rem .6rem;
+  border:1px solid var(--rule); border-radius:2px;
+  font-family:var(--f-m); font-size:.625rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-faint); transition:all .5s var(--ease);
+}
+.lock-row .res{margin-left:auto; font-weight:600}
+.lock.on .lock-row.win{border-color:var(--verify); color:var(--verify)}
+.lock.on .lock-row.lose{opacity:.45; text-decoration:line-through}
+
+/* ============ WORK GRID (minor) ============ */
+.works{display:grid; gap:0; border-top:1px solid var(--rule)}
+.work{
+  display:grid; gap:.5rem; padding:1.6rem 0; border-bottom:1px solid var(--rule-soft);
+  position:relative; transition:padding-left .5s var(--ease);
+}
+@media (min-width:820px){
+  .work{grid-template-columns:150px minmax(0,1fr) auto; gap:0 2rem; align-items:baseline}
+  .work:hover{padding-left:.9rem}
+  .work::before{
+    content:""; position:absolute; left:0; top:1.3rem; bottom:1.3rem; width:2px;
+    background:var(--stamp); transform:scaleY(0); transform-origin:top;
+    transition:transform .5s var(--ease);
+  }
+  .work:hover::before{transform:scaleY(1)}
+}
+.work-y{color:var(--ink-faint)}
+.work h4{font-family:var(--f-d); font-variation-settings:"wdth" 104; font-weight:700; font-size:var(--s-1); margin:0 0 .3rem}
+.work p{margin:0; color:var(--ink-soft); font-size:var(--s--1); max-width:56ch}
+.work .go{font-family:var(--f-m); font-size:.625rem; letter-spacing:.12em; text-transform:uppercase; color:var(--stamp); text-decoration:none; white-space:nowrap}
+
+.repo{
+  display:inline-flex; align-items:baseline; gap:.45rem; margin-top:1.2rem;
+  font-family:var(--f-m); font-size:.6875rem; letter-spacing:.06em; color:var(--stamp);
+  text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--stamp) 32%,transparent);
+  padding-bottom:1px; transition:border-color .3s var(--ease)
+}
+.repo:hover{border-bottom-color:var(--stamp)}
+
+/* ============ OUTPUT ============ */
+.rec{display:grid; gap:2rem}
+@media (min-width:900px){.rec{grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.5rem 3.5rem}}
+.rec-item h4{font-family:var(--f-d); font-variation-settings:"wdth" 104; font-weight:700; font-size:var(--s-1); margin:0 0 .3rem}
+.rec-meta{color:var(--ink-faint); margin:0 0 .55rem}
+.rec-item p{margin:0; color:var(--ink-soft); font-size:var(--s--1)}
+.chips{display:flex; flex-wrap:wrap; gap:.35rem; margin:.8rem 0 0; padding:0; list-style:none}
+.chips li{font-family:var(--f-m); font-size:.625rem; letter-spacing:.04em; color:var(--ink-soft);
+  border:1px solid var(--rule); border-radius:2px; padding:.15rem .4rem}
+.chips li b{color:var(--stamp); font-weight:600}
+
+.tier{display:grid; grid-template-columns:minmax(0,1fr); gap:.3rem; padding:1rem 0; border-bottom:1px solid var(--rule-soft)}
+@media (min-width:700px){.tier{grid-template-columns:118px minmax(0,1fr); gap:0 1.5rem; align-items:baseline}}
+.tier:first-of-type{border-top:1px solid var(--rule)}
+.tier dt{font-family:var(--f-m); font-size:.625rem; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--stamp)}
+.tier dd{margin:0; color:var(--ink-soft); font-size:var(--s--1); line-height:1.75}
+.tier dd b{color:var(--ink); font-weight:600}
+
+.close-q{
+  font-family:var(--f-d); font-variation-settings:"wdth" 112; font-weight:800;
+  font-size:clamp(2rem,7vw,4.6rem); line-height:.92; letter-spacing:-.03em; text-transform:uppercase;
+  margin:0 0 1.6rem; text-wrap:balance;
+}
+.links{display:flex; flex-wrap:wrap; gap:.6rem 2.2rem; margin:1.6rem 0 0; padding:0; list-style:none}
+.links a{font-family:var(--f-m); font-size:.8125rem; letter-spacing:.04em; text-decoration:none;
+  border-bottom:1px solid var(--rule); padding-bottom:2px; transition:all .3s var(--ease)}
+.links a:hover{border-bottom-color:var(--stamp); color:var(--stamp)}
+
+footer{border-top:1px solid var(--rule); margin-top:0}
+.foot-in{max-width:var(--shell); margin-inline:auto; padding:1.3rem var(--gut) 3rem; color:var(--ink-faint)}
+
+/* ============ CURSOR RETICLE ============ */
+.retic{
+  position:fixed; top:0; left:0; z-index:80; pointer-events:none; display:none;
+  width:22px; height:22px; margin:-11px 0 0 -11px;
+  transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease);
+}
+.retic::before,.retic::after{content:""; position:absolute; background:var(--stamp)}
+.retic::before{left:50%; top:0; bottom:0; width:1px; transform:translateX(-.5px)}
+.retic::after{top:50%; left:0; right:0; height:1px; transform:translateY(-.5px)}
+.retic i{
+  position:absolute; inset:0; border:1px solid var(--stamp); opacity:.5;
+  transition:transform .35s var(--ease),opacity .3s var(--ease);
+}
+.retic.hot{width:44px; height:44px; margin:-22px 0 0 -22px}
+.retic.hot i{transform:rotate(45deg); opacity:1}
+@media (hover:hover) and (pointer:fine){
+  body.has-retic .retic{display:block}
+}
+
+/* ============ MOTION LAYER (progressive) ============ */
+/* everything visible at rest; .motion only added when JS runs + motion allowed */
+.motion .rise{opacity:0; transform:translateY(26px)}
+.motion .rise.in{opacity:1; transform:none; transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.motion .rise.in.s1{transition-delay:.06s} .motion .rise.in.s2{transition-delay:.12s}
+.motion .rise.in.s3{transition-delay:.18s} .motion .rise.in.s4{transition-delay:.24s}
+.motion .rise.in.s5{transition-delay:.3s}
+
+.motion .bar{transform:scaleX(1)}
+.motion .revealed .bar{transform:scaleX(0); transition:transform .72s var(--ease)}
+.motion .revealed .bar.b2{transition-delay:.13s}
+.motion .revealed .bar.b3{transition-delay:.26s}
+
+/* scroll-driven hero transform */
+@supports (animation-timeline:scroll()){
+  .motion .hero-stage{
+    animation:heroOut linear both;
+    animation-timeline:scroll(root block);
+    animation-range:0 92vh;
+  }
+  @keyframes heroOut{
+    to{transform:scale(.78) translateY(-6vh); opacity:.05; filter:blur(2px)}
+  }
+  .motion .band-tag{
+    animation:drift linear both; animation-timeline:view(); animation-range:entry 0% cover 42%;
+  }
+  @keyframes drift{from{transform:translateY(26px); opacity:0}to{transform:none; opacity:1}}
+  .motion h2{
+    animation:slideT linear both; animation-timeline:view(); animation-range:entry 8% cover 40%;
+  }
+  @keyframes slideT{from{transform:translateX(-3.5vw); opacity:.25}to{transform:none; opacity:1}}
+}
+
+/* ---- phone: the apparatus has to fit the hand ---- */
+@media (max-width:760px){
+  /* shrink the specimen so the sticky machine doesn't eat the screen */
+  .doc{font-size:.64rem; line-height:2.45; padding:.85rem 1rem 1rem}
+  .machine-bar span:not(.who):not(.st){display:none}
+
+  /* labels go above the value — no horizontal room to sit beside it */
+  .ent::before{
+    left:-1px; top:auto; bottom:calc(100% + 1px);
+    padding:0 3px; background:var(--surface);
+    transform:translateY(4px);
+  }
+  .machine[data-stage="2"] .ent::before{transform:translateY(0)}
+
+  .hero-thesis{font-size:var(--s-2); max-width:none}
+  .stage{padding:1.6rem 0}
+  .stage p{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  .motion .rise{opacity:1 !important; transform:none !important}
+  .motion .bar{display:none}
+  .doc{transform:none !important}
+}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <span class="hdr-name">Azwad Tahmid</span>
+  <div class="hdr-read mono"><span class="dot"></span><b id="rdStage">INPUT</b><span id="rdName">The brief</span></div>
+  <div class="hdr-prog" id="prog"></div>
+</header>
+
+<nav class="spine" id="spine" aria-label="Page sections">
+  <div class="sp-node" data-k="input"><div class="sp-mark"><i></i></div><div class="sp-label">Input</div></div>
+  <div class="sp-node sp-gap"><div class="sp-mark"><div class="sp-line"></div></div><div></div></div>
+  <div class="sp-node" data-k="process"><div class="sp-mark"><i></i></div><div class="sp-label">Process</div></div>
+  <div class="sp-node sp-gap"><div class="sp-mark"><div class="sp-line"></div></div><div></div></div>
+  <div class="sp-node" data-k="system"><div class="sp-mark"><i></i></div><div class="sp-label">System</div></div>
+  <div class="sp-node sp-gap"><div class="sp-mark"><div class="sp-line"></div></div><div></div></div>
+  <div class="sp-node" data-k="output"><div class="sp-mark"><i></i></div><div class="sp-label">Output</div></div>
+</nav>
+
+<div class="retic" id="retic" aria-hidden="true"><i></i></div>
+
+<!-- ============ HERO ============ -->
+<div class="hero-track">
+  <section class="hero-stage" id="hero">
+    <div class="hero-in">
+      <p class="hero-meta mono">
+        <span>Computer Science BSc &middot; Brunel University London</span>
+        <span>London, UK</span>
+        <b>Available Summer 2027</b>
+      </p>
+
+      <h1 id="h1">
+        <span class="ln">Azwad<span class="bar b1"></span></span>
+        <span class="ln indent">Tahmid<span class="bar b2"></span></span>
+      </h1>
+
+      <p class="hero-thesis">I build AI systems that know what they are not allowed to decide.</p>
+
+      <div class="hero-foot mono">
+        <span><b>1st</b>Hillingdon Hackathon</span>
+        <span><b>8</b>hours to prototype</span>
+        <span><b>0</b>cloud API calls</span>
+      </div>
+    </div>
+    <div class="scroll-cue mono"><i></i><span>Scroll to run</span></div>
+  </section>
+</div>
+
+<div class="shell">
+
+<!-- ============ INPUT ============ -->
+<section class="band" id="input" data-stage="INPUT" data-name="The brief">
+  <div class="band-head">
+    <div class="band-tag mono">Input<span>Apr 2026</span></div>
+    <div><h2>One constraint,<br>eight hours</h2></div>
+  </div>
+
+  <div class="brief">
+    <div class="mono band-tag" style="color:var(--ink-faint)">Hillingdon Council<span>&times; Brunel University</span></div>
+    <div class="brief-body">
+      <p class="rise">
+        Hillingdon Council handed the hackathon an open brief and one hard requirement. Personal
+        data belonging to residents could not travel. Not to an API, not to a bucket, not off the
+        desk it was sitting on.
+      </p>
+      <p class="pull rise">No resident data <span class="redact" tabindex="0" role="button">leaves</span> the machine</p>
+      <p class="rise">
+        The obvious move was a cloud API key and a good demo. Instead I ran every model locally
+        &mdash; GLM through Ollama, spaCy for entity recognition, EasyOCR behind it &mdash; and
+        shipped a working GDPR-compliant redaction tool with a four-person team inside the eight
+        hours. <strong>It won gold.</strong> It took sponsor prizes from Microsoft and ICS.AI, and it
+        converted into a work experience offer inside the council&rsquo;s own digital services team,
+        where I later built the assistant further down this page.
+      </p>
+      <p class="rise">
+        Everything I have built since carries the same shape: a system that does real work, and an
+        explicit written line it will not cross.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="band" id="process" data-stage="PROCESS" data-name="Synthetiq Redact">
+  <div class="band-head">
+    <div class="band-tag mono">Process<span>Flagship</span></div>
+    <div>
+      <h2>Synthetiq Redact</h2>
+      <p class="band-sub">
+        A desktop tool that reads a scanned document, finds the personal data inside it, and
+        returns a safely redacted copy &mdash; without the file ever leaving the building.
+        I owned the design, the build and the demo. Scroll to run the pipeline.
+      </p>
+    </div>
+  </div>
+
+  <div class="lab">
+    <div class="lab-sticky">
+      <div class="machine" id="machine" data-stage="1">
+        <div class="machine-bar mono">
+          <span class="who">&#9679; This machine</span>
+          <span>hillingdon&#8209;sar&#8209;2291.pdf</span>
+          <span class="st" id="stReadout">01 / INGEST</span>
+        </div>
+
+        <div class="doc" aria-label="Synthetic sample document used to demonstrate redaction">
+          <div><span class="lbl">RE:</span> Housing benefit review &mdash; case HB/2291/07</div>
+          <div><span class="lbl">APPLICANT:</span> <span class="ent" data-k="PERSON" style="--i:0">Marian Okonkwo</span></div>
+          <div><span class="lbl">ADDRESS:</span> <span class="ent" data-k="ADDRESS" style="--i:1">14 Pield Heath Rd, Uxbridge</span></div>
+          <div><span class="lbl">DOB:</span> <span class="ent" data-k="DATE" style="--i:2">09/03/1974</span></div>
+          <div><span class="lbl">NI NO:</span> <span class="ent" data-k="NI" style="--i:3">QQ 12 34 56 C</span></div>
+          <div><span class="lbl">CONTACT:</span> <span class="ent" data-k="PHONE" style="--i:4">07700 900182</span></div>
+          <div style="margin-top:.7rem">The applicant contacted the service regarding a change of circumstances affecting entitlement from the current period.</div>
+        </div>
+
+        <div class="seal mono">
+          <span>Export sealed</span>
+          <span class="sig">SIG&nbsp;7F2A&#8209;0C41 &middot; resolves locally only</span>
+        </div>
+
+        <div class="boundary">
+          <p>Machine boundary</p>
+          <button class="btn" id="tryCloud" type="button">Send to cloud OCR</button>
+          <p id="bMsg" style="color:var(--verify)">enforced</p>
+        </div>
+
+        <div class="packet" aria-hidden="true"></div>
+        <div class="refused" aria-hidden="true"><span>Refused</span></div>
+      </div>
+    </div>
+
+    <div class="stages" id="stages">
+      <article class="stage" data-s="1">
+        <div class="stage-n mono"><b>01</b><span>Input</span></div>
+        <h4>Ingest the page as pixels</h4>
+        <p>
+          A scanned document arrives as an image, not text. GLM running locally through Ollama reads
+          it, with EasyOCR behind it as a fallback &mdash; and the weaker fallback geometry is blocked
+          by default, so quality never degrades quietly when the primary model struggles.
+        </p>
+        <ul class="tech"><li>Tauri</li><li>FastAPI</li><li>GLM via Ollama</li><li>EasyOCR</li><li>PyMuPDF</li></ul>
+      </article>
+
+      <article class="stage" data-s="2">
+        <div class="stage-n mono"><b>02</b><span>Process</span></div>
+        <h4>Find what counts as personal</h4>
+        <p>
+          spaCy classifies entities across the recovered text &mdash; names, addresses, dates of
+          birth, national insurance numbers, phone numbers. Each detection keeps its coordinates on
+          the page, because the redaction has to land on pixels, not on a text layer.
+        </p>
+        <ul class="tech"><li>spaCy</li><li>OpenCV</li><li>Python</li></ul>
+      </article>
+
+      <article class="stage" data-s="3">
+        <div class="stage-n mono"><b>03</b><span>System</span></div>
+        <h4>Burn it in, keep the labels</h4>
+        <p>
+          Redactions are burned into the pixels rather than layered as removable overlays, so a
+          released file cannot be peeled back open. Field labels stay readable while their values
+          disappear &mdash; a reviewer can still see that an address was held, just not which one.
+        </p>
+        <ul class="tech"><li>Pillow</li><li>PyMuPDF</li><li>SQLite</li></ul>
+      </article>
+
+      <article class="stage" data-s="4">
+        <div class="stage-n mono"><b>04</b><span>Output</span></div>
+        <h4>Seal it, and stop there</h4>
+        <p>
+          The export carries a signed identifier that resolves only on the server that produced it,
+          never a public registry. And the tool stops: it does not make the final disclosure
+          decision. A human signs that off, every time, on purpose.
+        </p>
+        <ul class="tech"><li>React</li><li>Vite</li><li>Signed local IDs</li></ul>
+        <a class="repo" href="https://github.com/Synthetiq-HQ/synthetiq-redact">github.com/Synthetiq-HQ/synthetiq-redact &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEM ============ -->
+<section class="band" id="system" data-stage="SYSTEM" data-name="Systems built">
+  <div class="band-head">
+    <div class="band-tag mono">System<span>2026</span></div>
+    <div>
+      <h2>Systems that<br>hold a line</h2>
+      <p class="band-sub">Three more builds, each with the boundary that shaped its architecture.</p>
+    </div>
+  </div>
+
+  <!-- Hillingdon Assist -->
+  <div style="margin-bottom:clamp(3rem,7vw,5rem)">
+    <div class="stage-n mono rise"><b>Hillingdon Assist</b><span>RAG assistant &middot; council residents &amp; advisors</span></div>
+    <p class="rise" style="color:var(--ink-soft); max-width:60ch; margin:.5rem 0 1.5rem">
+      Built during my work experience at the Civic Centre. A crawler walks only allowlisted public
+      council domains &mdash; authenticated areas, staff pages and payment systems bounce off it.
+      What survives is chunked, classified into official action links, and split across two stores.
+      Answers come from a local model and arrive with their sources attached.
+    </p>
+
+    <div class="rig rise" id="rig">
+      <svg viewBox="0 0 620 176" role="img" aria-label="Retrieval pipeline: public council pages are crawled, chunked, indexed into SQLite metadata and ChromaDB vectors, then retrieved by a local model which returns a cited answer. Authenticated and payment pages are denied.">
+        <!-- denied branch -->
+        <path class="deny" d="M58 44 L58 22 L150 22"/>
+        <text class="denytxt" x="154" y="25">auth &middot; payment &rarr; denied</text>
+
+        <!-- flow paths -->
+        <path class="flow-path"    style="--len:46" d="M96 62 L142 62"/>
+        <path class="flow-path d2" style="--len:46" d="M226 62 L272 62"/>
+        <path class="flow-path d3" style="--len:70" d="M356 62 L390 62 L390 40 L424 40"/>
+        <path class="flow-path d4" style="--len:70" d="M356 62 L390 62 L390 96 L424 96"/>
+        <path class="flow-path d5" style="--len:120" d="M520 68 L556 68 L556 140 L96 140"/>
+
+        <!-- nodes -->
+        <g class="g-node">
+          <rect class="nodebox" x="16" y="44" width="80" height="36"/>
+          <text class="nodetxt" x="26" y="62">CRAWL</text>
+          <text class="nodesub" x="26" y="73">allowlist only</text>
+        </g>
+        <g class="g-node n2">
+          <rect class="nodebox" x="142" y="44" width="84" height="36"/>
+          <text class="nodetxt" x="152" y="62">CHUNK</text>
+          <text class="nodesub" x="152" y="73">+ classify</text>
+        </g>
+        <g class="g-node n3">
+          <rect class="nodebox" x="272" y="44" width="84" height="36"/>
+          <text class="nodetxt" x="282" y="62">EMBED</text>
+          <text class="nodesub" x="282" y="73">sentence-tf</text>
+        </g>
+        <g class="g-node n4">
+          <rect class="nodebox" x="424" y="22" width="96" height="36"/>
+          <text class="nodetxt" x="434" y="40">SQLITE</text>
+          <text class="nodesub" x="434" y="51">source meta</text>
+        </g>
+        <g class="g-node n5">
+          <rect class="nodebox" x="424" y="78" width="96" height="36"/>
+          <text class="nodetxt" x="434" y="96">CHROMADB</text>
+          <text class="nodesub" x="434" y="107">vectors</text>
+        </g>
+        <g class="g-node n6">
+          <rect class="nodebox" x="16" y="122" width="80" height="36"/>
+          <text class="nodetxt" x="26" y="140">ANSWER</text>
+          <text class="nodesub" x="26" y="151">with citations</text>
+        </g>
+        <circle class="pulse-dot" cx="100" cy="62" r="3" style="--tx:38px"/>
+      </svg>
+    </div>
+    <p class="mono rise" style="color:var(--ink-faint); margin:.8rem 0 0">
+      Refuses &rarr; answering past its sources. No evidence returns &ldquo;not enough public information&rdquo;, never a guess.
+    </p>
+    <a class="repo" href="https://github.com/Synthetiq-HQ/hillingdon-assist-chatbot">github.com/Synthetiq-HQ/hillingdon-assist-chatbot &rarr;</a>
+  </div>
+
+  <!-- eDoctorsBD -->
+  <div style="margin-bottom:clamp(3rem,7vw,5rem); border-top:1px solid var(--rule); padding-top:clamp(2rem,5vw,3.5rem)">
+    <div class="stage-n mono rise"><b>eDoctorsBD</b><span>Telehealth booking platform &middot; solo build &middot; Sep 2026</span></div>
+    <p class="rise" style="color:var(--ink-soft); max-width:60ch; margin:.5rem 0 0">
+      A three-role marketplace in Next.js 14 and Prisma. Patients search by specialization, fee,
+      gender, language and distance &mdash; the last computed with a haversine calculation against
+      the query location &mdash; and can book for family members. Every appointment moves through a
+      real state machine, and slot-locking transactions mean two patients cannot claim the same slot.
+    </p>
+
+    <ul class="fsm rise" id="fsm">
+      <li data-i="0">PENDING_PAYMENT</li><li class="arw">&rarr;</li>
+      <li data-i="1">PENDING_DOCTOR_REVIEW</li><li class="arw">&rarr;</li>
+      <li data-i="2">BOOKED</li>
+      <li class="arw" style="opacity:.5">/</li>
+      <li class="bad">REJECTED</li><li class="bad">CANCELLED</li>
+    </ul>
+
+    <div class="lock rise" id="lock">
+      <div class="lock-row win"><span>Patient A</span><span>slot 14:30</span><span class="res">locked</span></div>
+      <div class="lock-row lose"><span>Patient B</span><span>slot 14:30</span><span class="res">rejected</span></div>
+    </div>
+
+    <p class="mono rise" style="color:var(--ink-faint); margin:1rem 0 0">
+      Refuses &rarr; interpreting a single intake answer. It flags and re-orders the doctor&rsquo;s queue; crisis answers surface helplines immediately. Clinical judgement stays with the doctor.
+    </p>
+    <a class="repo" href="https://github.com/azwadtahmid/eDoctorsBD">github.com/azwadtahmid/eDoctorsBD &rarr;</a>
+  </div>
+
+  <!-- Minor works -->
+  <div class="works">
+    <article class="work">
+      <div class="work-y mono">Aug 2026</div>
+      <div>
+        <h4>SkillCheck</h4>
+        <p>
+          Sixty-five skills and 4,168 questions behind a server-graded assessment engine, with a
+          public registry so any certificate can be verified. The browser never receives the answer
+          key. The README lists its own remaining gaps before real use &mdash; the honest way to ship
+          a prototype.
+        </p>
+      </div>
+      <a class="go" href="https://github.com/azwadtahmid/SkillCheck-App">Repo &rarr;</a>
+    </article>
+
+    <article class="work">
+      <div class="work-y mono">Aug 2026</div>
+      <div>
+        <h4>Velmora Orders</h4>
+        <p>
+          A JavaFX desktop storefront built with Maven over a SQLite relational schema &mdash; the
+          object-oriented build where Java became the tool I reach for first.
+        </p>
+      </div>
+      <a class="go" href="https://github.com/azwadtahmid/Velmora-Orders">Repo &rarr;</a>
+    </article>
+
+    <article class="work">
+      <div class="work-y mono">Aug 2026</div>
+      <div>
+        <h4>Pizza Co Voice Agent</h4>
+        <p>
+          A voice assistant taking menu questions, opening-hours checks and full orders by phone,
+          wiring Retell AI into an n8n workflow.
+        </p>
+      </div>
+      <a class="go" href="https://github.com/azwadtahmid/pizza-co-voice-agent">Repo &rarr;</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ OUTPUT ============ -->
+<section class="band" id="output" data-stage="OUTPUT" data-name="Record">
+  <div class="band-head">
+    <div class="band-tag mono">Output<span>Record</span></div>
+    <div><h2>What that<br>produced</h2></div>
+  </div>
+
+  <div class="rec">
+    <div class="rec-item rise">
+      <h4>1st Place, Gold Winner</h4>
+      <p class="rec-meta mono">Hillingdon Hackathon &middot; Apr 2026</p>
+      <p>Open council brief to working prototype in eight hours, presented to council, industry and academic judges. Sponsor prizes from Microsoft and ICS.AI.</p>
+    </div>
+    <div class="rec-item rise s1">
+      <h4>Digital Services Work Experience</h4>
+      <p class="rec-meta mono">London Borough of Hillingdon &middot; Aug 2026</p>
+      <p>Civic Centre, Uxbridge. Worked with Service Design, Business Intelligence, Web &amp; Digital Development and Project Delivery on how public-sector technology balances data, accessibility and security.</p>
+    </div>
+    <div class="rec-item rise s2">
+      <h4>BSc (Hons) Computer Science</h4>
+      <p class="rec-meta mono">Brunel University London &middot; Year 2</p>
+      <ul class="chips">
+        <li>Logic &amp; Computation <b>A*</b></li><li>Info Systems <b>A</b></li>
+        <li>Programming Applications <b>A</b></li><li>Data &amp; Information <b>A</b></li>
+        <li>Intro Programming <b>B+</b></li><li>Group Project <b>B</b></li>
+      </ul>
+    </div>
+    <div class="rec-item rise s3">
+      <h4>Qualifications</h4>
+      <p class="rec-meta mono">Certifications &amp; prior study</p>
+      <ul class="chips">
+        <li>IELTS <b>8.0</b></li><li>HSC &amp; SSC GPA <b>5.00/5.00</b></li><li>HSC <b>91.2%</b></li>
+        <li>Generative AI &mdash; Google</li><li>Web Dev Fundamentals &mdash; IBM</li>
+        <li>4th &mdash; CGS Business Summit</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:clamp(3rem,7vw,5rem)">
+    <div class="stage-n mono rise"><b>Toolkit</b><span>rated the way I&rsquo;d want a teammate to rate themselves</span></div>
+    <dl style="margin:1.2rem 0 0">
+      <div class="tier"><dt>Mastered</dt><dd><b>Java</b> &middot; <b>Object-oriented design</b> &middot; <b>Maven</b> &middot; <b>JavaFX</b></dd></div>
+      <div class="tier"><dt>Intermediate</dt><dd>Python &middot; C &middot; SQL &middot; HTML/CSS &middot; Data structures &middot; Algorithms &middot; Operating systems &middot; Git &middot; SQLite &middot; Full-stack web &middot; LLM integration &middot; Prompt design &middot; n8n &middot; Retell AI</dd></div>
+      <div class="tier"><dt>Familiar</dt><dd>JavaScript &middot; Relational databases &middot; Retrieval-augmented generation &middot; Web scraping &amp; indexing</dd></div>
+      <div class="tier"><dt>Enthusiast</dt><dd>PII redaction and data-extraction pipelines &mdash; the thing I keep choosing to build.</dd></div>
+    </dl>
+  </div>
+
+  <div style="margin-top:clamp(3rem,7vw,5rem)">
+    <div class="stage-n mono rise"><b>Alongside</b><span>run concurrently with a full-time degree</span></div>
+    <p class="rise" style="color:var(--ink-soft); max-width:62ch; margin:.7rem 0 0">
+      Secretary of the Brunel Blockchain Society, Treasurer of the Computer Science Society and
+      Secretary of the Photography Society &mdash; three committees at once. Student Ambassador
+      through registration and induction, and crew at McDonald&rsquo;s across variable shifts. The
+      projects above were built in the <span class="redact" tabindex="0" role="button">gaps</span>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="band" id="contact" data-stage="OUTPUT" data-name="Available">
+  <h3 class="close-q rise">Available<br>Summer 2027</h3>
+  <p class="rise s1" style="color:var(--ink-soft); max-width:52ch; margin:0">
+    Looking for a 12-month software engineering placement &mdash; most useful to a team putting
+    GenAI somewhere the data actually matters.
+  </p>
+  <ul class="links rise s2">
+    <li><a href="mailto:azwadtahmid24@gmail.com">azwadtahmid24@gmail.com</a></li>
+    <li><a href="https://github.com/azwadtahmid">github.com/azwadtahmid</a></li>
+    <li><a href="https://www.linkedin.com/in/azwad-tahmid-a676a33b7/">linkedin.com/in/azwad-tahmid</a></li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="foot-in mono">Azwad Tahmid &middot; London, UK &middot; Document specimen above is synthetic sample data</div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var root = document.documentElement;
+  if(!reduce) root.classList.add("motion");
+
+  /* ---- hero scan reveal ---- */
+  var h1 = document.getElementById("h1");
+  if(h1){
+    if(reduce){ h1.classList.add("revealed"); }
+    else{ requestAnimationFrame(function(){ setTimeout(function(){ h1.classList.add("revealed"); }, 140); }); }
+  }
+
+  /* ---- redaction toggles ---- */
+  document.querySelectorAll(".redact").forEach(function(el){
+    el.addEventListener("click", function(){ el.classList.toggle("is-open"); });
+    el.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); el.classList.toggle("is-open"); }
+    });
+  });
+
+  /* ---- generic reveal ---- */
+  if(!reduce && "IntersectionObserver" in window){
+    var revealIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); revealIO.unobserve(e.target); } });
+    }, {rootMargin:"0px 0px -12% 0px", threshold:0.15});
+    document.querySelectorAll(".rise").forEach(function(el){ revealIO.observe(el); });
+  } else {
+    document.querySelectorAll(".rise").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- section readout + spine ---- */
+  var hdr = document.getElementById("hdr");
+  var rdStage = document.getElementById("rdStage");
+  var rdName = document.getElementById("rdName");
+  var order = ["input","process","system","output"];
+  var nodes = {};
+  document.querySelectorAll(".sp-node[data-k]").forEach(function(n){ nodes[n.getAttribute("data-k")] = n; });
+  var lines = document.querySelectorAll(".sp-node.sp-gap");
+
+  function setActive(key){
+    var idx = order.indexOf(key);
+    order.forEach(function(k,i){
+      var n = nodes[k]; if(!n) return;
+      n.classList.toggle("on", i === idx);
+      n.classList.toggle("done", i < idx);
+    });
+    lines.forEach(function(l,i){ l.classList.toggle("done", i < idx); });
+  }
+
+  if("IntersectionObserver" in window){
+    var secIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var st = e.target.getAttribute("data-stage");
+        var nm = e.target.getAttribute("data-name");
+        if(rdStage) rdStage.textContent = st;
+        if(rdName) rdName.textContent = nm;
+        setActive(st.toLowerCase());
+      });
+    }, {rootMargin:"-45% 0px -45% 0px"});
+    document.querySelectorAll("[data-stage][data-name]").forEach(function(s){ secIO.observe(s); });
+
+    /* header state once hero has left */
+    var heroIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){ hdr.classList.toggle("is-past", !e.isIntersecting); });
+    }, {rootMargin:"-60px 0px 0px 0px"});
+    var heroEl = document.getElementById("hero");
+    if(heroEl) heroIO.observe(heroEl);
+  }
+
+  /* ---- read progress (scroll-timeline preferred, IO-free fallback) ---- */
+  var prog = document.getElementById("prog");
+  if(prog && CSS.supports && CSS.supports("animation-timeline","scroll()")){
+    prog.style.animation = "growW linear both";
+    prog.style.animationTimeline = "scroll(root block)";
+    var st = document.createElement("style");
+    st.textContent = "@keyframes growW{from{width:0}to{width:100%}}";
+    document.head.appendChild(st);
+  }
+
+  /* ---- THE LAB: stage sequencing ---- */
+  var machine = document.getElementById("machine");
+  var stReadout = document.getElementById("stReadout");
+  var labels = {1:"01 / INGEST", 2:"02 / DETECT", 3:"03 / REDACT", 4:"04 / SEALED"};
+  if(machine && "IntersectionObserver" in window){
+    var stageIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var s = e.target.getAttribute("data-s");
+        machine.setAttribute("data-stage", s);
+        if(stReadout) stReadout.textContent = labels[s] || "";
+        document.querySelectorAll(".stage").forEach(function(x){ x.classList.remove("on"); });
+        e.target.classList.add("on");
+      });
+    }, {rootMargin:"-40% 0px -40% 0px"});
+    document.querySelectorAll(".stage").forEach(function(s){ stageIO.observe(s); });
+  }
+
+  /* ---- boundary refusal ---- */
+  var tryCloud = document.getElementById("tryCloud");
+  var bMsg = document.getElementById("bMsg");
+  if(tryCloud && machine){
+    tryCloud.addEventListener("click", function(){
+      if(machine.classList.contains("alarm")) return;
+      machine.classList.add("alarm");
+      tryCloud.disabled = true;
+      if(bMsg){ bMsg.textContent = "blocked at boundary"; bMsg.style.color = "var(--stamp)"; }
+      setTimeout(function(){
+        machine.classList.remove("alarm");
+        tryCloud.disabled = false;
+        if(bMsg){ bMsg.textContent = "enforced"; bMsg.style.color = "var(--verify)"; }
+      }, reduce ? 900 : 2600);
+    });
+  }
+
+  /* ---- RAG rig + fsm + slot lock ---- */
+  if("IntersectionObserver" in window){
+    var onceIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("on"); onceIO.unobserve(e.target); }
+      });
+    }, {threshold:0.3});
+    ["rig","lock"].forEach(function(id){ var el = document.getElementById(id); if(el) onceIO.observe(el); });
+
+    var fsm = document.getElementById("fsm");
+    if(fsm){
+      var fsmIO = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(!e.isIntersecting) return;
+          fsmIO.unobserve(e.target);
+          var items = e.target.querySelectorAll("li[data-i]");
+          items.forEach(function(li,i){
+            setTimeout(function(){
+              items.forEach(function(x){ x.classList.remove("hot"); });
+              li.classList.add("hot");
+            }, reduce ? 0 : 520 * i);
+          });
+        });
+      }, {threshold:0.4});
+      fsmIO.observe(fsm);
+    }
+  }
+
+  /* ---- cursor reticle (fine pointers only) ---- */
+  var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if(fine && !reduce){
+    var retic = document.getElementById("retic");
+    document.body.classList.add("has-retic");
+    var rx = 0, ry = 0, queued = false;
+    window.addEventListener("pointermove", function(e){
+      rx = e.clientX; ry = e.clientY;
+      if(queued) return;
+      queued = true;
+      requestAnimationFrame(function(){
+        retic.style.transform = "translate(" + rx + "px," + ry + "px)";
+        queued = false;
+      });
+    }, {passive:true});
+    var hotSel = "a,button,.redact,.work,.stage";
+    document.addEventListener("pointerover", function(e){
+      if(e.target.closest && e.target.closest(hotSel)) retic.classList.add("hot");
+    });
+    document.addEventListener("pointerout", function(e){
+      if(e.target.closest && e.target.closest(hotSel)) retic.classList.remove("hot");
+    });
+  }
+})();
+</script>
+</body>
+</html>
